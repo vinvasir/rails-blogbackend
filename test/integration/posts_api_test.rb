@@ -9,7 +9,7 @@ class PostsApiTest < ActionDispatch::IntegrationTest
 
 			json = JSON.parse(respone.body)
 
-			assert_equal json[:posts].length) 0
+			assert_equal json[:posts].length, 0
 		end
 	end
   # test "the truth" do
