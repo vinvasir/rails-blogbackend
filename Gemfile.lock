@@ -38,6 +38,7 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    ansi (1.5.0)
     arel (8.0.0)
     bcrypt (3.1.11)
     builder (3.2.3)
@@ -70,6 +71,11 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.2)
+    minitest-reporters (1.1.14)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     nio4r (2.1.0)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
@@ -110,6 +116,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    ruby-progressbar (1.8.1)
     ruby_dep (1.5.0)
     shoulda-context (1.2.2)
     slop (3.6.0)
@@ -142,6 +149,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   listen (>= 3.0.5, < 3.2)
+  minitest-reporters
   pg (~> 0.18)
   pry
   puma (~> 3.7)
