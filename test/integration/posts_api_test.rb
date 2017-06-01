@@ -43,6 +43,8 @@ class PostsApiTest < ActionDispatch::IntegrationTest
 
 			get "/v1/posts"
 
+			json = JSON.parse(response.body)
+
 			assert_equal json["posts"].length, 6
 
 			assert_equal json["posts"][5]["content"], Post.last.content
