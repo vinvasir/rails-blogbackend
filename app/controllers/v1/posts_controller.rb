@@ -1,5 +1,5 @@
 class V1::PostsController < ApplicationController
 	def index
-		render json: {posts: []}
+		render json: {posts: Post.all}
 	end
 end
