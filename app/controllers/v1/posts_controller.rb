@@ -1,10 +1,11 @@
 class V1::PostsController < ApplicationController
+	before_action :find_post, only: [:show, :update, :edit, :destroy]
+
 	def index
 		render json: {posts: Post.all}
 	end
 
 	def show
-		@post = Post.find(params[:id])
 		render json: {post: @post}
 	end
 
@@ -18,9 +19,17 @@ class V1::PostsController < ApplicationController
 		end
 	end
 
+	def destroy
+		render json: {success: "successfully destroyed post"} if @post.destroy
+	end
+
 	private
 
 		def post_params
 			params.require(:post).permit(:title, :categories, :content)
+		end
+
+		def find_post
+			@post = Post.find(params[:id])
 		end
 end
