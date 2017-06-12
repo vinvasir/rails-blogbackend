@@ -20,7 +20,9 @@ class V1::PostsController < ApplicationController
 	end
 
 	def destroy
-		render json: {success: "successfully destroyed post"} if @post.destroy
+		if @post.destroy
+			render json: {success: "successfully destroyed post"}
+		end
 	end
 
 	private
