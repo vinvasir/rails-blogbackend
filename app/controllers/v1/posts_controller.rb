@@ -3,6 +3,11 @@ class V1::PostsController < ApplicationController
 		render json: {posts: Post.all}
 	end
 
+	def show
+		@post = Post.find(params[:id)
+		render json: {post: @post}
+	end
+
 	def create
 		@post = Post.new(post_params)
 
